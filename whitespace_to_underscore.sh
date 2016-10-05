@@ -1,17 +1,17 @@
 #!/bin/bash
 
 #verbose ?
-verbose=1
+verbose=0
 
 usage="Usage: `basename "$0"` INPUT_FOLDER OUTPUT_FOLDER"
 # Check the arguments passed to the script
-if [ $# -ne 2 ] ; then
+if [ $# -ne 2 ]; then
 	echo "Wrong nb of args!"
 	echo $usage
 	exit 1
 
 else 
-	if [ $1 = $2 ] ; then
+	if [ $1 = $2 ]; then
 		echo "Input & Output folders must be different. Too dangerous otherwise!"
 		echo $usage
 		exit 1
@@ -25,7 +25,7 @@ fi
 cp -aR $1/. $2
 
 # Removing whitespaces from files & folders name
-if [ $verbose -eq 1 ] ; then
+if [ $verbose -eq 1 ]; then
 	find $2 -depth -mindepth 1 -print -execdir rename 's| |_|g' '{}' \;
 else
 	find $2 -depth -mindepth 1 -execdir rename 's| |_|g' '{}' \;
