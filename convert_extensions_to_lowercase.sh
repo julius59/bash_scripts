@@ -11,7 +11,7 @@ if [ $# -ne 1 ]; then
 	exit 1
 fi
 
-
+echo "Converting extensions to lower case ..."
 # Put all file extensions to lower case
 if [ $verbose -eq 1 ]; then
 	find $1 -depth -mindepth 1 -print -type f -execdir rename 's/\.([^.]+)$/.\L$1/' '{}' \;

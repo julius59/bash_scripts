@@ -19,11 +19,13 @@ else
 fi
 
 # (unused) Copy folder structure, while removing whitespaces
-#find $1 -type d | sed "s|$1|| ; s| |_|g" | xargs -I {} mkdir -p "$2"/{}
+##find $1 -type d | sed "s|$1|| ; s| |_|g" | xargs -I {} mkdir -p "$2"/{}
 
+echo "Copying source content ..."
 # Copy source content, conserving attributes
 cp -aR $1/. $2
 
+echo "Removing whitespaces ..."
 # Removing whitespaces from files & folders name
 if [ $verbose -eq 1 ]; then
 	find $2 -depth -mindepth 1 -print -execdir rename 's| |_|g' '{}' \;

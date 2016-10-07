@@ -11,7 +11,7 @@ if [ $# -ne 1 ]; then
 	exit 1
 fi
 
-
+echo "Removing Thumbs.db, .DS_Store etc..."
 # Removing whitespaces from files & folders name
 if [ $verbose -eq 1 ]; then
 	find $1 -type f \( -name "Thumbs.db" -or -name "desktop.ini" \

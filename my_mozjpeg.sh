@@ -52,7 +52,6 @@ fi
 
 
 echo "[MyMozJPEG] ***** Creating 7z archives of subfolders *****"
-
 # Optional, depends on the folder structure
 #find $2 -mindepth 1 -maxdepth 1 -type d -exec ./maxi_compression.sh {} \;
 
